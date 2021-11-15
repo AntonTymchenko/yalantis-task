@@ -55,7 +55,7 @@ const Employees = ({ emploList, setActiveId, activeId }) => {
                               value="no active"
                               defaultChecked={isChecked(id) ? false : true}
                               onChange={(e) => {
-                                if (!isChecked(id)) {
+                                if (isChecked(id)) {
                                   e.target.checked = false;
                                 } else {
                                   e.target.checked = true;
