@@ -24,10 +24,10 @@ const Employees = ({ emploList, setActiveId, activeId }) => {
   };
 
   const itemOfList = () => {
-    const arr = [];
+    const arrOfEmployeesList = [];
 
     for (let i = 0; i < arr_EN.length; i += 1) {
-      arr.push(
+      arrOfEmployeesList.push(
         <li key={arr_EN[i]} className="mainListItem">
           {
             <ul className="secondList">
@@ -83,7 +83,7 @@ const Employees = ({ emploList, setActiveId, activeId }) => {
         </li>
       );
     }
-    return arr;
+    return arrOfEmployeesList;
   };
   return (
     <div className="leftSide">

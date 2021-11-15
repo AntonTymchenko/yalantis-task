@@ -1,5 +1,8 @@
 .birthPart {
   border: 1px dashed blue;
   width: 30%;
-  margin-left: 10px;
+  padding-left: 20px;
+}
+.month {
+  font-weight: bold;
 }

@@ -53,7 +53,7 @@ const EmployeesBirthday = ({ activeId, emploList }) => {
           chanchingYearToCurrentMonth().map((month) => {
             return (
               <li key={month}>
-                {month}
+                <p className="month">{month}</p>
                 <ul>
                   {!listOfChekedEmployees.some((item) =>
                     createDate(item.dob).includes(month)
