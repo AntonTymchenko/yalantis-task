@@ -1,0 +1,15 @@
+.highlighted {
+  color: aqua;
+}
+
+.usual {
+  color: black;
+}
+.leftSide {
+  width: 70%;
+}
+.mainList {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+}
