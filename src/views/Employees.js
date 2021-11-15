@@ -53,7 +53,14 @@ const Employees = ({ emploList, setActiveId, activeId }) => {
                               type="radio"
                               name={`${id}`}
                               value="no active"
-                              defaultChecked={isChecked(id) ? true : false}
+                              defaultChecked={isChecked(id) ? false : true}
+                              onChange={(e) => {
+                                if (!isChecked(id)) {
+                                  e.target.checked = false;
+                                } else {
+                                  e.target.checked = true;
+                                }
+                              }}
                               onClick={(event, id) =>
                                 onSubmitButtons(event, id)
                               }
@@ -65,7 +72,14 @@ const Employees = ({ emploList, setActiveId, activeId }) => {
                               type="radio"
                               name={`${id}`}
                               value="active"
-                              defaultChecked={isChecked(id) ? true : false}
+                              defaultChecked={!isChecked(id) ? false : true}
+                              onChange={(e) => {
+                                if (!isChecked(id)) {
+                                  e.target.checked = true;
+                                } else {
+                                  e.target.checked = false;
+                                }
+                              }}
                               onClick={(event, id) =>
                                 onSubmitButtons(event, id)
                               }
