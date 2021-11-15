@@ -1,34 +1,8 @@
+import React from "react";
+import arr_EN from "../utils/abc";
 import "../views/Employees.css";
 
 const Employees = ({ emploList, setActiveId, activeId }) => {
-  const arr_EN = [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F",
-    "G",
-    "H",
-    "I",
-    "J",
-    "K",
-    "L",
-    "M",
-    "N",
-    "O",
-    "P",
-    "Q",
-    "R",
-    "S",
-    "T",
-    "U",
-    "V",
-    "W",
-    "X",
-    "Y",
-    "Z",
-  ];
   const onSubmitButtons = (event) => {
     if (event.target.value === "no active") {
       const indx = activeId.findIndex((item) => item === event.target.name);

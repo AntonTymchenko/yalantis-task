@@ -1,19 +1,6 @@
 import React from "react";
+import monthNames from "../utils/month";
 import "./EmployeesBirthday.css";
-const monthNames = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
 
 const EmployeesBirthday = ({ activeId, emploList }) => {
   const listOfChekedEmployees = [];
@@ -68,20 +55,26 @@ const EmployeesBirthday = ({ activeId, emploList }) => {
               <li key={month}>
                 {month}
                 <ul>
-                  {listOfChekedEmployees.map((item) => {
-                    if (createDate(item.dob).includes(month)) {
-                      return (
-                        <li key={item.id}>
-                          <p>
-                            <span>{item.lastName}</span>{" "}
-                            <span>{item.firstName}</span> -
-                            <span>{createDate(item.dob)}</span>
-                          </p>
-                        </li>
-                      );
-                    }
-                    return null;
-                  })}
+                  {!listOfChekedEmployees.some((item) =>
+                    createDate(item.dob).includes(month)
+                  ) ? (
+                    <p>No employees</p>
+                  ) : (
+                    listOfChekedEmployees.map((item) => {
+                      if (createDate(item.dob).includes(month)) {
+                        return (
+                          <li key={item.id}>
+                            <p>
+                              <span>{item.lastName}</span>{" "}
+                              <span>{item.firstName}</span> -
+                              <span>{createDate(item.dob)}</span>
+                            </p>
+                          </li>
+                        );
+                      }
+                      return null;
+                    })
+                  )}
                 </ul>
               </li>
             );
