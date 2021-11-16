@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import monthNames from "../utils/month";
 import "./EmployeesBirthday.css";
 
@@ -84,14 +85,16 @@ const EmployeesBirthday = ({ activeId, emploList }) => {
     </div>
   );
 };
+EmployeesBirthday.propType = {
+  activeId: PropTypes.arrayOf(PropTypes.string).isRequired,
+  emploList: PropTypes.arrayOf(
+    PropTypes.shape({
+      dob: PropTypes.string.isRequired,
+      firstName: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+      lastName: PropTypes.string.isRequired,
+    })
+  ),
+};
 
 export default EmployeesBirthday;
-
-// listOfChekedEmployees.map((item) => (
-//   <li key={item.id}>
-//     <p>
-//       <span>{item.lastName}</span> <span>{item.firstName}</span> -
-//       <span>{createDate(item.dob)}</span>
-//     </p>
-//   </li>
-// ))

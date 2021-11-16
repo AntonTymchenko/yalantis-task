@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import arr_EN from "../utils/abc";
 import "../views/Employees.css";
 
@@ -101,11 +102,28 @@ const Employees = ({ emploList, setActiveId, activeId }) => {
   };
   return (
     <div className="leftSide">
-      <ol type="A" className="mainList">
-        {itemOfList()}
-      </ol>
+      <h1>Employees</h1>
+      {emploList.length === 0 ? (
+        <p>Loading...</p>
+      ) : (
+        <ol type="A" className="mainList">
+          {itemOfList()}
+        </ol>
+      )}
     </div>
   );
 };
 
+Employees.propType = {
+  setActiveId: PropTypes.func.isRequired,
+  activeId: PropTypes.arrayOf(PropTypes.string).isRequired,
+  emploList: PropTypes.arrayOf(
+    PropTypes.shape({
+      dob: PropTypes.string.isRequired,
+      firstName: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+      lastName: PropTypes.string.isRequired,
+    })
+  ),
+};
 export default Employees;
